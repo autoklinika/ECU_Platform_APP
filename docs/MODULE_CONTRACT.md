@@ -5,6 +5,9 @@ Obecny build przyjmuje wyłącznie tymczasowe manifesty opisane w
 [HOST_PROOF.md](HOST_PROOF.md). Nie jest to implementacja pełnego loadera,
 stabilnego ABI ani docelowych podpisanych pakietów opisanych poniżej.
 
+Bieżące rozszerzenie: [port runtime API 1.1](RUNTIME_MOCK.md) dodaje przyjęcie
+operacji, osobne zakończenie, powiązanie z sesją i anulowanie. Nie jest IPC/ABI.
+
 ## 1. Jednostka rozszerzenia
 
 Moduł ma stabilne ID, wersję i własny zakres odpowiedzialności. Host zna jego

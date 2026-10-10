@@ -6,19 +6,17 @@ sensor, bramę lub inny moduł. Produkt nie jest wyłącznie testerem diagnostyc
 
 ## Stan repozytorium
 
-**CORE V2 oraz pierwszy działający host aplikacji bez sprzętu.**
-`ecu_app_host` rejestruje pakiety demonstracyjne, sprawdza zgodność i uprawnienia,
-aktywuje moduły, wykonuje operacje i publikuje wyniki. Działa bez GUI.
-Jest to dowód kontraktu: katalog w pamięci i dwie bezpieczne usługi testowe,
-nie produkcyjny instalator, sandbox, API HTTP ani połączenie z DUT.
-[Uruchomienie i ograniczenia hosta](docs/HOST_PROOF.md).
-Wyniki fundamentu: [Weryfikacja](docs/VALIDATION.md); bieżący krok:
-[walidacja hosta](docs/validation/host-proof-2026-10-10.md).
+**Host aplikacji oraz integracja z runtime CORE na atrapie CAN.**
+Katalog, kontrola uprawnień i lifecycle pakietów działają bez GUI. Nowy dowód
+utrzymuje sesję, wykonuje nieblokujące operacje z generacją/ID, używa zasobów,
+anulowania i watchdogów CORE oraz kończy transport po awarii.
+[Zakres i uruchomienie](docs/RUNTIME_MOCK.md),
+[wyniki](docs/validation/runtime-mock-2026-10-10.md).
 
-Przejęto bez zmian 69 plików `src/core_v2/`, 20 zestawów testów C++ oraz 2 pliki
-kontroli architektury z `autoklinika/ECU_Platrorm_V2`, commit
-`29666b5659d52ad1660bbef8e202dc12507bb221`. Kompilacja i testy nie potrzebują
-starego repozytorium ani dostępu do sieci. [Pochodzenie](docs/PROVENANCE.md).
+CORE V2, jego 20 zestawów testów i 2 kontrole granic — 91 plików — są nadal
+identyczne ze wskazanym importem. [Pochodzenie](docs/PROVENANCE.md).
+Nie ma jeszcze rzeczywistego adaptera, executora OS, API HTTP, WebGUI ani
+połączenia z fizycznym DUT. To dowód integracji programowej, nie wydanie stanowiska.
 
 ## Kierunek zaakceptowany przez właściciela
 

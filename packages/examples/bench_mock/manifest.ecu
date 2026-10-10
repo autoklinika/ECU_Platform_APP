@@ -1,0 +1,10 @@
+# Only ecu_runtime_mock provides these virtual-time, hardware-free services.
+schema=1
+id=org.ecu.example.bench-mock
+version=1.0.0
+api=1.1
+requires=mock.connect,mock.sample,mock.disconnect,mock.recover
+operation.open=mock.connect
+operation.read=mock.sample
+operation.close=mock.disconnect
+operation.reset-fault=mock.recover

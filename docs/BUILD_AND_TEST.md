@@ -131,3 +131,13 @@ Biblioteka bez hosta i Pythona (testy wyłączone):
 cmake -S . -B build/core-only -DECU_APP_BUILD_HOST=OFF -DECU_APP_BUILD_TESTS=OFF
 cmake --build build/core-only --config Release --parallel 2
 ```
+
+## Runtime CORE na atrapie (API 1.1)
+
+[Opis i scenariusz](RUNTIME_MOCK.md). Domyślny build z testami tworzy również
+`apps/runtime_mock/ecu_runtime_mock` (Windows: podkatalog wybranej konfiguracji).
+Uruchom z argumentem `packages/examples/bench_mock`. To czas wirtualny, bez CAN.
+
+`ECU_APP_BUILD_MOCK_PROOFS=OFF` pomija demonstrator. Build z
+`ECU_APP_BUILD_TESTS=OFF` i `ECU_APP_BUILD_MOCK_PROOFS=OFF` nie włącza wsparcia atrap.
+Pozostają dotychczasowe opcje wyboru samego CORE oraz ASan/UBSan.

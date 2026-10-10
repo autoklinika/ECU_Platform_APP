@@ -1,7 +1,8 @@
 # Weryfikacja fundamentu
 
 Data: 2026-10-10. Historyczny wynik kroku 0 w APP, nie dawnego wydania V2.
-Aktualny host opisuje [walidacja kroku 1](validation/host-proof-2026-10-10.md).
+Historyczny host: [walidacja kroku 1](validation/host-proof-2026-10-10.md).
+Aktualna integracja: [runtime na atrapie](validation/runtime-mock-2026-10-10.md).
 
 ## Wykonano na CM5
 

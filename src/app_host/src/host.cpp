@@ -20,10 +20,13 @@ const sdk::Operation* operation(const sdk::ModuleSnapshot& module, const std::st
 }
 }  // namespace
 
-Host::Host(std::vector<Service> services) : services_(std::move(services)) {
+Host::Host(std::vector<Service> services, sdk::IRuntimePort* runtime)
+    : runtime_(runtime), services_(std::move(services)) {
   if (services_.size() > sdk::kMaxItems) throw std::invalid_argument("too many services");
   for (std::size_t i = 0; i < services_.size(); ++i) {
-    if (!valid_name(services_[i].id) || !services_[i].execute)
+    if (!valid_name(services_[i].id) ||
+        (services_[i].runtime_action == sdk::RuntimeAction::none ? !services_[i].execute :
+         (runtime_ == nullptr || static_cast<bool>(services_[i].execute))))
       throw std::invalid_argument("invalid service");
     for (std::size_t j = 0; j < i; ++j) {
       if (services_[i].id == services_[j].id) throw std::invalid_argument("duplicate service");
@@ -31,6 +34,7 @@ Host::Host(std::vector<Service> services) : services_(std::move(services)) {
   }
   modules_.reserve(kMaxModules);
 }
+Host::~Host() { if (runtime_ != nullptr) runtime_->shutdown(); }
 const Service* Host::service(const std::string_view id) const {
   const auto it = std::find_if(services_.begin(), services_.end(), [&](const Service& s) { return s.id == id; });
   return it == services_.end() ? nullptr : &*it;
@@ -102,6 +106,9 @@ Result Host::deactivate(const std::string_view id, const std::uint64_t generatio
   if (current == nullptr) return result(Code::not_found, id);
   if (current->state != sdk::State::active) return result(Code::not_active, id);
   if (generation == 0 || current->generation != generation) return result(Code::stale_activation, id);
+  if (current->pending_operation.operation_id != 0) return result(Code::busy, id);
+  if (runtime_ != nullptr && runtime_->snapshot().owner_activation == generation)
+    return result(Code::active_module, id, "disconnect or recover the owned runtime first");
   current->state = sdk::State::disabled;
   auto response = result(Code::ok, id, "disabled");
   response.generation = generation;
@@ -121,12 +128,16 @@ Result Host::deny(const std::string_view id, const std::string_view op) {
   auto* current = find(id);
   if (current == nullptr) return result(Code::not_found, id);
   if (operation(*current, op) == nullptr) return result(Code::unknown_operation, id);
+  if (runtime_ != nullptr && current->pending_operation.operation_id != 0 &&
+      current->pending_operation.detail == op)
+    static_cast<void>(runtime_->cancel(current->generation, current->pending_operation.operation_id));
   auto& allowed = current->allowed_operations;
   allowed.erase(std::remove(allowed.begin(), allowed.end(), op), allowed.end());
   return result(Code::ok, id, "denied by operator");
 }
 Result Host::invoke(const std::string_view id, const std::uint64_t generation,
-                    const std::string_view op, const std::string_view input) {
+                    const std::string_view op, const std::string_view input,
+                    const std::uint64_t session_id) {
   if (executing_) return result(Code::busy);
   auto* current = find(id);
   if (current == nullptr) return result(Code::not_found, id);
@@ -137,12 +148,24 @@ Result Host::invoke(const std::string_view id, const std::uint64_t generation,
   if (std::find(current->allowed_operations.begin(), current->allowed_operations.end(), op) == current->allowed_operations.end())
     return result(Code::permission_denied, id);
   if (!valid_text(input)) return result(Code::invalid_input, id);
+  if (current->pending_operation.operation_id != 0) return result(Code::busy, id);
   const auto* implementation = service(spec->service);
   if (implementation == nullptr) return result(Code::missing_capability, id);
   if (last_operation_ == (std::numeric_limits<std::uint64_t>::max)()) return result(Code::counter_exhausted, id);
   auto response = result(Code::ok, id);
   response.operation_id = ++last_operation_;
   response.generation = generation;
+  if (implementation->runtime_action != sdk::RuntimeAction::none) {
+    if (!input.empty()) return result(Code::invalid_input, id, "runtime input must be empty");
+    response.code = runtime_->submit({implementation->runtime_action, generation, response.operation_id, session_id});
+    response.session_id = session_id;
+    if (response.code == Code::accepted) {
+      response.detail = std::string{op};
+      current->pending_operation = response;
+    }
+    return response;
+  }
+  if (session_id != 0) return result(Code::invalid_input, id);
   struct ExecutionGuard {
     bool& flag;
     explicit ExecutionGuard(bool& value) : flag(value) { flag = true; }
@@ -167,6 +190,49 @@ Result Host::invoke(const std::string_view id, const std::uint64_t generation,
   ++current->completed_operations;
   current->last_operation = response;
   return response;
+}
+Result Host::cancel(const std::string_view id, const std::uint64_t generation,
+                    const std::uint64_t operation_id) {
+  if (executing_) return result(Code::busy);
+  auto* current = find(id);
+  if (current == nullptr) return result(Code::not_found, id);
+  if (current->state != sdk::State::active) return result(Code::not_active, id);
+  if (generation == 0 || generation != current->generation) return result(Code::stale_activation, id);
+  if (runtime_ == nullptr || current->pending_operation.operation_id == 0) return result(Code::not_found, id);
+  if (operation_id == 0 || operation_id != current->pending_operation.operation_id)
+    return result(Code::stale_activation, id);
+  auto response = result(runtime_->cancel(generation, operation_id), id);
+  response.generation = generation; response.operation_id = operation_id;
+  return response;
+}
+void Host::service() {
+  if (executing_ || runtime_ == nullptr) return;
+  struct Guard { bool& b; explicit Guard(bool& f) : b(f) { b = true; } ~Guard() { b = false; } } guard{executing_};
+  runtime_->service();
+  sdk::RuntimeCompletion completed;
+  if (!runtime_->take_completion(completed)) return;
+  for (auto& module : modules_) {
+    if (module.generation != completed.request.activation ||
+        module.pending_operation.operation_id != completed.request.operation) continue;
+    auto final = module.pending_operation;
+    final.code = completed.code;
+    final.detail.clear();
+    final.session_id = completed.session;
+    final.observed_at_ns = completed.observed_at_ns;
+    final.payload = completed.observed ? "mock reply observed" : "";
+    module.last_operation = std::move(final);
+    module.pending_operation = {};
+    ++module.completed_operations;
+    return;
+  }
+}
+void Host::shutdown_runtime() {
+  if (executing_ || runtime_ == nullptr) return;
+  runtime_->shutdown();
+  service();
+}
+sdk::RuntimeSnapshot Host::runtime_snapshot() const noexcept {
+  return runtime_ == nullptr ? sdk::RuntimeSnapshot{} : runtime_->snapshot();
 }
 std::vector<sdk::ModuleSnapshot> Host::catalog() const { return modules_; }
 }  // namespace ecu::app::host

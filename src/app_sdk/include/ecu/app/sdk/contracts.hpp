@@ -12,7 +12,7 @@ struct ApiVersion {
   std::uint16_t major{1};
   std::uint16_t minor{0};
 };
-inline constexpr ApiVersion kHostApi{1, 0};
+inline constexpr ApiVersion kHostApi{1, 1};
 inline constexpr std::size_t kMaxManifestBytes = 8192;
 inline constexpr std::size_t kMaxLineBytes = 512;
 inline constexpr std::size_t kMaxItems = 16;
@@ -62,6 +62,16 @@ enum class Code {
   counter_exhausted,
   io_error,
   invalid_command,
+  accepted,
+  stale_session,
+  resource_busy,
+  timeout,
+  cancelled,
+  transport_error,
+  clock_fault,
+  queue_overflow,
+  cleanup_failed,
+  invalid_state,
 };
 
 enum class State { disabled, active };
@@ -73,6 +83,8 @@ struct Result {
   std::uint64_t generation{0};
   std::uint64_t operation_id{0};
   std::string payload;
+  std::uint64_t session_id{0};
+  std::int64_t observed_at_ns{0};
   [[nodiscard]] bool ok() const noexcept { return code == Code::ok; }
 };
 struct ModuleSnapshot {
@@ -82,6 +94,7 @@ struct ModuleSnapshot {
   std::vector<std::string> allowed_operations;
   std::uint64_t completed_operations{0};
   Result last_operation;
+  Result pending_operation;
 };
 
 }  // namespace ecu::app::sdk

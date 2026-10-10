@@ -36,7 +36,7 @@ int main() {
   CHECK(calls == 0);  // Install never executes package code or services.
   auto incompatible = manifest("new.api"); incompatible.requires_api = {2, 0};
   CHECK(platform.install(incompatible).code == Code::incompatible_api);
-  incompatible.requires_api = {1, 1};
+  incompatible.requires_api = {1, 2};
   CHECK(platform.install(incompatible).code == Code::incompatible_api);
   auto missing = manifest("missing", "hardware.can");
   CHECK(platform.install(missing).code == Code::missing_capability);

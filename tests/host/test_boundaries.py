@@ -13,7 +13,7 @@ def violations(text, sdk=False, host=False):
     for header in includes:
         if header.startswith(("ecu/core", "linux/", "sys/", "net/", "Qt", "QML")) or header.lower() in {"windows.h", "winsock2.h", "unistd.h", "dlfcn.h", "pthread.h"}:
             errors.append("hardware/CORE/GUI include")
-        if sdk and header.startswith("ecu/"):
+        if sdk and header.startswith("ecu/") and not header.startswith("ecu/app/sdk/"):
             errors.append("SDK depends on implementation")
         if host and header in {"filesystem", "fstream", "thread", "mutex", "atomic", "future"}:
             errors.append("host catalog crosses IO/execution boundary")
@@ -54,6 +54,21 @@ class BoundaryTests(unittest.TestCase):
         self.assertIn('target_link_libraries(ecu_app_host PRIVATE ECU::app_host)', cli)
         for text in [sdk, host, cli]:
             self.assertNotRegex(text, r'ECU::core|Qt[56]|SocketCAN|ws2_32|dlopen|FetchContent|find_package')
+
+    def test_runtime_uses_core_without_os_or_driver_bypass(self):
+        sources=list((ROOT/'src/app_runtime').rglob('*.hpp'))+list((ROOT/'src/app_runtime').rglob('*.cpp'))
+        self.assertTrue(sources)
+        for source in sources:
+            text=source.read_text()
+            # Core includes are required in the adapter, not in SDK/catalog.
+            stripped=re.sub(r'^\s*#\s*include\s*"ecu/core_v2/[^"\n]+"', '', text, flags=re.M)
+            self.assertEqual(violations(stripped),[],str(source))
+            self.assertNotRegex(text,r'#include [<"](?:thread|mutex|future|atomic|QTimer|QObject|filesystem|fstream)[>"]')
+            self.assertNotRegex(text,r'driver_\.(?:open|close|try_send|try_receive)\s*\(')
+            self.assertNotIn('ecu/app/host/',text)
+        runtime=(ROOT/'src/app_runtime/CMakeLists.txt').read_text()
+        self.assertIn('PUBLIC ECU::app_sdk ECU::core_v2',runtime)
+        self.assertNotRegex(runtime,r'Qt[56]|SocketCAN|ws2_32|FetchContent|find_package')
 
     def test_host_has_no_package_or_oem_identity(self):
         for source in (ROOT / 'src/app_host').rglob('*.cpp'):

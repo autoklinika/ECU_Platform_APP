@@ -36,8 +36,25 @@ test na dysku i uruchamiane na wcześniej skompilowanym hoście.
 
 ## CI
 
-Wynik pełnej macierzy Linux/Windows zostanie zapisany po jej zakończeniu ze
-wskazaniem faktycznie testowanego commita. Lokalne PASS nie oznacza Windows PASS.
+**CI: 9/9 PASS dla kodu `c17ba07f14484559b9147a420e05b4cdb4107b3f`.**
+
+- Push: [38038954193](https://github.com/autoklinika/ECU_Platform_APP/actions/runs/38038954193).
+- PR #1: [38038992507](https://github.com/autoklinika/ECU_Platform_APP/actions/runs/38038992507).
+- Każdy przebieg: GCC Debug/Release, Clang Debug, Clang ASan/UBSan, GCC Generic
+  oraz MSVC Win32/x64 w Debug/Release.
+- We wszystkich 9 wariantach każdego przebiegu GitHub potwierdził sukces
+  kroków Build i Verify offline. Nie jest to wynik założony z testów Linux.
+- [Maszynowy zapis weryfikacji](host-proof-2026-10-10.json).
+
+Po tych przebiegach dopisano wyłącznie wynik do dokumentacji i roadmapy.
+Kod, testy i konfiguracja CI pozostają identyczne jak w testowanym commicie.
+Pełna zgodność architektury docelowej nie jest deklarowana na podstawie tego kroku.
+
+## Status pracy
+
+Krok 1 ukończony w swoim zakresie. PR #1 kieruje zmiany do nieprodukcyjnej gałęzi
+fundamentu; nie scalono zmian i nie ustanowiono `main`. Następny krok: powiązanie
+hosta z zaufanym runtime CORE i granicą sprzętu, początkowo wyłącznie na atrapach.
 
 ## Granice wyniku
 

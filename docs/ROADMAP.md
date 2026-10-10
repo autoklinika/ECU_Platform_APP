@@ -12,7 +12,7 @@ build, kontrola pochodzenia, kontrola granic i nowa dokumentacja z rozmowy.
 w zadeklarowanych środowiskach; bez dostępu do sprzętu. Szczegółowy wynik w
 [VALIDATION.md](VALIDATION.md). To nie jest jeszcze działający host aplikacji.
 
-## 1. Najmniejszy działający host i pakiet bez sprzętu
+## 1. Najmniejszy działający host i pakiet bez sprzętu — wykonany
 
 Implementacja i sposób uruchomienia: [HOST_PROOF.md](HOST_PROOF.md).
 Wyniki bieżącego kroku: [walidacja](validation/host-proof-2026-10-10.md).

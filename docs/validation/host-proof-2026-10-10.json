@@ -1,0 +1,346 @@
+{
+  "schema": 1,
+  "date": "2026-10-10",
+  "repository": "autoklinika/ECU_Platform_APP",
+  "tested_code_commit": "c17ba07f14484559b9147a420e05b4cdb4107b3f",
+  "baseline_commit": "9915446b65985369b50b00a0a871f5b71ae0d111",
+  "core_tree_unchanged": "71b04ab0da332b8466b814bac99c5685e5a91901",
+  "local": {
+    "machine": "CM5 / Linux aarch64",
+    "compiler": "GCC 14.2.0",
+    "variants": {
+      "Debug": {
+        "ctest_passed": 28,
+        "ctest_failed": 0
+      },
+      "Release": {
+        "ctest_passed": 28,
+        "ctest_failed": 0
+      },
+      "Generic": {
+        "ctest_passed": 28,
+        "ctest_failed": 0
+      },
+      "ASan_UBSan_no_vptr": {
+        "ctest_passed": 28,
+        "ctest_failed": 0
+      }
+    }
+  },
+  "hardware_access": false,
+  "production_deployment": false,
+  "ci_runs": [
+    {
+      "run_id": 38038954193,
+      "head_sha": "c17ba07f14484559b9147a420e05b4cdb4107b3f",
+      "event": "push",
+      "url": "https://github.com/autoklinika/ECU_Platform_APP/actions/runs/38038954193",
+      "status": "completed",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "name": "Linux / Clang Debug",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Build",
+              "conclusion": "success"
+            },
+            {
+              "name": "Verify offline",
+              "conclusion": "success"
+            },
+            {
+              "name": "Inspect uninstrumented Core",
+              "conclusion": "success"
+            }
+          ]
+        },
+        {
+          "name": "Linux / GCC Debug",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Build",
+              "conclusion": "success"
+            },
+            {
+              "name": "Verify offline",
+              "conclusion": "success"
+            },
+            {
+              "name": "Inspect uninstrumented Core",
+              "conclusion": "success"
+            }
+          ]
+        },
+        {
+          "name": "Linux / Clang ASan UBSan",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Build",
+              "conclusion": "success"
+            },
+            {
+              "name": "Verify offline",
+              "conclusion": "success"
+            },
+            {
+              "name": "Inspect uninstrumented Core",
+              "conclusion": "skipped"
+            }
+          ]
+        },
+        {
+          "name": "Linux / GCC Release",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Build",
+              "conclusion": "success"
+            },
+            {
+              "name": "Verify offline",
+              "conclusion": "success"
+            },
+            {
+              "name": "Inspect uninstrumented Core",
+              "conclusion": "success"
+            }
+          ]
+        },
+        {
+          "name": "MSVC / Win32 / Debug",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Build",
+              "conclusion": "success"
+            },
+            {
+              "name": "Verify offline",
+              "conclusion": "success"
+            }
+          ]
+        },
+        {
+          "name": "MSVC / x64 / Release",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Build",
+              "conclusion": "success"
+            },
+            {
+              "name": "Verify offline",
+              "conclusion": "success"
+            }
+          ]
+        },
+        {
+          "name": "Linux / GCC Generic",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Build",
+              "conclusion": "success"
+            },
+            {
+              "name": "Verify offline",
+              "conclusion": "success"
+            },
+            {
+              "name": "Inspect uninstrumented Core",
+              "conclusion": "success"
+            }
+          ]
+        },
+        {
+          "name": "MSVC / Win32 / Release",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Build",
+              "conclusion": "success"
+            },
+            {
+              "name": "Verify offline",
+              "conclusion": "success"
+            }
+          ]
+        },
+        {
+          "name": "MSVC / x64 / Debug",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Build",
+              "conclusion": "success"
+            },
+            {
+              "name": "Verify offline",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "run_id": 38038992507,
+      "head_sha": "c17ba07f14484559b9147a420e05b4cdb4107b3f",
+      "event": "pull_request",
+      "url": "https://github.com/autoklinika/ECU_Platform_APP/actions/runs/38038992507",
+      "status": "completed",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "name": "MSVC / x64 / Release",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Build",
+              "conclusion": "success"
+            },
+            {
+              "name": "Verify offline",
+              "conclusion": "success"
+            }
+          ]
+        },
+        {
+          "name": "Linux / Clang Debug",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Build",
+              "conclusion": "success"
+            },
+            {
+              "name": "Verify offline",
+              "conclusion": "success"
+            },
+            {
+              "name": "Inspect uninstrumented Core",
+              "conclusion": "success"
+            }
+          ]
+        },
+        {
+          "name": "MSVC / Win32 / Debug",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Build",
+              "conclusion": "success"
+            },
+            {
+              "name": "Verify offline",
+              "conclusion": "success"
+            }
+          ]
+        },
+        {
+          "name": "Linux / GCC Debug",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Build",
+              "conclusion": "success"
+            },
+            {
+              "name": "Verify offline",
+              "conclusion": "success"
+            },
+            {
+              "name": "Inspect uninstrumented Core",
+              "conclusion": "success"
+            }
+          ]
+        },
+        {
+          "name": "Linux / Clang ASan UBSan",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Build",
+              "conclusion": "success"
+            },
+            {
+              "name": "Verify offline",
+              "conclusion": "success"
+            },
+            {
+              "name": "Inspect uninstrumented Core",
+              "conclusion": "skipped"
+            }
+          ]
+        },
+        {
+          "name": "Linux / GCC Generic",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Build",
+              "conclusion": "success"
+            },
+            {
+              "name": "Verify offline",
+              "conclusion": "success"
+            },
+            {
+              "name": "Inspect uninstrumented Core",
+              "conclusion": "success"
+            }
+          ]
+        },
+        {
+          "name": "Linux / GCC Release",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Build",
+              "conclusion": "success"
+            },
+            {
+              "name": "Verify offline",
+              "conclusion": "success"
+            },
+            {
+              "name": "Inspect uninstrumented Core",
+              "conclusion": "success"
+            }
+          ]
+        },
+        {
+          "name": "MSVC / x64 / Debug",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Build",
+              "conclusion": "success"
+            },
+            {
+              "name": "Verify offline",
+              "conclusion": "success"
+            }
+          ]
+        },
+        {
+          "name": "MSVC / Win32 / Release",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Build",
+              "conclusion": "success"
+            },
+            {
+              "name": "Verify offline",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,6 +1,7 @@
 # Weryfikacja fundamentu
 
-Data: 2026-10-10. Dotyczy nowego repozytorium APP, nie dawnego wydania V2.
+Data: 2026-10-10. Historyczny wynik kroku 0 w APP, nie dawnego wydania V2.
+Aktualny host opisuje [walidacja kroku 1](validation/host-proof-2026-10-10.md).
 
 ## Wykonano na CM5
 
@@ -48,7 +49,7 @@ Workflow pomija zmiany wyłącznie dokumentacyjne. Wyniki opisujące zakończony
 run mogą być dopisane bez ponownej kompilacji tych samych źródeł; zawsze podajemy
 SHA rzeczywiście przetestowanego kodu.
 
-## Czego nie wykonano i czego nie ma
+## Czego nie wykonano i czego nie było w kroku 0
 
 Brak hosta, loadera pakietów, publicznego SDK, izolowanych workerów, API i WebGUI.
 Brak nowych adapterów sprzętowych i modułu SAC. Nie wykonano połączenia z DUT,

@@ -6,10 +6,14 @@ sensor, bramę lub inny moduł. Produkt nie jest wyłącznie testerem diagnostyc
 
 ## Stan repozytorium
 
-**Fundament: CORE V2, jego testy oraz nowa dokumentacja architektury.**
-Nie ma jeszcze hosta aplikacji, instalatora pakietów, API, WebGUI ani nowego
-połączenia z fizycznym DUT. Opis architektury nie jest deklaracją ich wdrożenia.
-Aktualne wyniki i ograniczenia: [Weryfikacja](docs/VALIDATION.md).
+**CORE V2 oraz pierwszy działający host aplikacji bez sprzętu.**
+`ecu_app_host` rejestruje pakiety demonstracyjne, sprawdza zgodność i uprawnienia,
+aktywuje moduły, wykonuje operacje i publikuje wyniki. Działa bez GUI.
+Jest to dowód kontraktu: katalog w pamięci i dwie bezpieczne usługi testowe,
+nie produkcyjny instalator, sandbox, API HTTP ani połączenie z DUT.
+[Uruchomienie i ograniczenia hosta](docs/HOST_PROOF.md).
+Wyniki fundamentu: [Weryfikacja](docs/VALIDATION.md); bieżący krok:
+[walidacja hosta](docs/validation/host-proof-2026-10-10.md).
 
 Przejęto bez zmian 69 plików `src/core_v2/`, 20 zestawów testów C++ oraz 2 pliki
 kontroli architektury z `autoklinika/ECU_Platrorm_V2`, commit
@@ -41,7 +45,10 @@ ctest --test-dir build/debug -C Debug --output-on-failure --no-tests=error
 
 Na Windows można użyć generatora Visual Studio; `--config` / `-C` wybiera
 konfigurację. Szczegóły: [Budowanie i testy](docs/BUILD_AND_TEST.md).
-Powstaje biblioteka `ECU::core_v2` i programy testowe, nie gotowa aplikacja ECU.
+Powstają biblioteka `ECU::core_v2`, host `ecu_app_host` i programy testowe.
+Host nie wykonuje operacji sprzętowych. Sam CORE bez hosta i testów można
+zbudować z `-DECU_APP_BUILD_HOST=OFF -DECU_APP_BUILD_TESTS=OFF`.
+Przykładowe pakiety: `packages/examples/echo` i `packages/examples/failure`.
 
 ## Dokumentacja
 

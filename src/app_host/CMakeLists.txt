@@ -1,0 +1,5 @@
+add_library(ecu_app_host_lib STATIC src/host.cpp src/manifest.cpp)
+add_library(ECU::app_host ALIAS ecu_app_host_lib)
+target_include_directories(ecu_app_host_lib PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
+target_link_libraries(ecu_app_host_lib PUBLIC ECU::app_sdk)
+ecu_app_strict(ecu_app_host_lib)

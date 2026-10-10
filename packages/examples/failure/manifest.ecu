@@ -1,0 +1,8 @@
+# Controlled application failure; never hardware failure simulation.
+schema=1
+id=org.ecu.example.failure
+version=1.0.0
+api=1.0
+requires=demo.echo,demo.fail
+operation.check=demo.fail
+operation.ping=demo.echo

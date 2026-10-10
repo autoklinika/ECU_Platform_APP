@@ -111,3 +111,23 @@ inicjalizacji statycznej za pomocą `tools/check_core_binary.py`. Kontrola wymag
 
 Faktycznie wykonane warianty i otwarte obszary są opisane w
 [VALIDATION.md](VALIDATION.md), a źródło kodu w [PROVENANCE.md](PROVENANCE.md).
+
+## Host bez sprzętu (krok 1)
+
+Domyślnie `ECU_APP_BUILD_HOST=ON`. Powstaje `ecu_app_host` w `apps/host/`
+katalogu budowania (Visual Studio dodaje `Debug/` albo `Release/`).
+`--help` opisuje komendy. Przykłady i granice: [HOST_PROOF.md](HOST_PROOF.md).
+
+Nowe testy CTest mają prefiks `ecu.app.`. Pełne CTest nadal obejmuje CORE;
+nie zaliczamy samego testu CLI jako regresji całego projektu.
+
+```sh
+ctest --test-dir build/debug -C Debug -R '^ecu\.app\.' --output-on-failure --no-tests=error
+```
+
+Biblioteka bez hosta i Pythona (testy wyłączone):
+
+```sh
+cmake -S . -B build/core-only -DECU_APP_BUILD_HOST=OFF -DECU_APP_BUILD_TESTS=OFF
+cmake --build build/core-only --config Release --parallel 2
+```

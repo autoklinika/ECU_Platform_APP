@@ -1,7 +1,9 @@
 # Instalowalne aplikacje i kontrakt modułów
 
-Status: **projekt semantyczny SDK; brak implementacji loadera i publicznego ABI**.
-Nie jest to obietnica, że obecny build przyjmie opisane pakiety.
+Status: **projekt semantyczny SDK; pierwszy ograniczony dowód jest zaimplementowany**.
+Obecny build przyjmuje wyłącznie tymczasowe manifesty opisane w
+[HOST_PROOF.md](HOST_PROOF.md). Nie jest to implementacja pełnego loadera,
+stabilnego ABI ani docelowych podpisanych pakietów opisanych poniżej.
 
 ## 1. Jednostka rozszerzenia
 

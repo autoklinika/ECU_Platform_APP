@@ -127,3 +127,15 @@ następnie rzeczywiste przypadki. Nie mnożymy agentów, usług i skryptów wdro
 `main` tylko za zgodą na konkretny changeset. Testy fizyczne i operacje ryzykowne
 nie wynikają automatycznie ze zgody na kodowanie. CORE przejmujemy; pozostałe
 komponenty są nową implementacją. Dokumentacja zawsze rozdziela plan i stan kodu.
+
+
+## D15 — Pierwszy kontrakt sprawdzamy na uruchamialnym hoście bez sprzętu
+
+Implementacja kroku 1: przenośne SDK źródłowe, katalog modułów w pamięci,
+krótkie usługi demonstracyjne, default-deny, generacje aktywacji i realne CLI.
+Tymczasowy `manifest.ecu` jest płaskim opisem ograniczonego dowodu; nie przesądza
+formatu podpisanego pakietu, JSON, IPC, natywnego ABI ani stabilnego SDK.
+Nie ładuje kodu z pakietu. Host nie zależy od CORE przed krokiem integracji
+runtime; nie dodajemy linkowania rdzenia bez użycia ani drugiego jego runtime.
+[Implementacja i ograniczenia](HOST_PROOF.md). To uszczegółowienie kroku 1,
+nie zmiana kierunku instalowalnych aplikacji.

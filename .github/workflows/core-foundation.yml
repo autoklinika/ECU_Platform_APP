@@ -1,4 +1,4 @@
-name: Core foundation
+name: Core and application host
 
 on:
   push:

@@ -37,9 +37,22 @@ Maksymalnie dwa równoległe zadania kompilacji.
 
 ## CI
 
-Pełna macierz Linux/Windows zostanie sprawdzona dla publikowanego commita.
-Nie jest jeszcze oznaczona jako PASS w tej rewizji dokumentu.
-Nie uznajemy wyniku Linux za wynik Windows.
+**Zakończone: 9/9 PASS dla obu przebiegów.**
+
+- Kod: `03e76cc18d3f2ea25e2080a81d536ab086abaa9b`.
+- Push: [38040551627](https://github.com/autoklinika/ECU_Platform_APP/actions/runs/38040551627).
+- PR #2: [38040572765](https://github.com/autoklinika/ECU_Platform_APP/actions/runs/38040572765).
+- Linux: GCC Debug, GCC Release, Clang Debug, Clang ASan/UBSan, GCC Generic.
+- Windows: MSVC Win32 i x64, każdy w Debug i Release.
+- Zweryfikowano dokładny SHA i sukces kroków Build oraz Verify offline we
+  wszystkich 9 wariantach każdego przebiegu.
+- [Zapis maszynowy](runtime-mock-2026-10-10.json).
+
+Po tych przebiegach dopisano tylko dokumentację wyników. Kod, testy, CMake i CI
+pozostają identyczne z przetestowanym commitem. PR #2 jest Draft, bez merge.
+Cały krok 2 roadmapy nie jest zamknięty: realny executor/clock i adapter OS
+pozostają przed implementacją. Zakres zlecony w tym zadaniu — integracja na
+atrapie — jest wykonany i zweryfikowany.
 
 ## Korekta wykryta przez testy
 

@@ -1,0 +1,739 @@
+{
+  "schema_version": 1,
+  "source_repository": "autoklinika/ECU_Platrorm_V2",
+  "source_ref_at_import": "main",
+  "source_commit": "29666b5659d52ad1660bbef8e202dc12507bb221",
+  "source_core_tree": "71b04ab0da332b8466b814bac99c5685e5a91901",
+  "import_date": "2026-10-10",
+  "policy": "Exact byte-for-byte baseline. Changes require a reviewed Core revision; never silently regenerate this manifest.",
+  "files": [
+    {
+      "path": "scripts/check_core_v2_architecture.py",
+      "source_path": "scripts/check_core_v2_architecture.py",
+      "git_blob_sha1": "3b566cb22732e00762c4b7f306aadf484756311b",
+      "sha256": "ae58eccaa95c1a29134fadeeea75173cc6c6aea8cae3ce29fe9211d06d3b5b2b",
+      "size_bytes": 7387,
+      "git_mode": "100644"
+    },
+    {
+      "path": "scripts/check_core_v2_architecture.sh",
+      "source_path": "scripts/check_core_v2_architecture.sh",
+      "git_blob_sha1": "0598696df3ea8ebabf01bd4e20bd826d55339643",
+      "sha256": "c6b505475d2345df3e97b991c0f4d7b0c02950af4290b93816abe3a4cf41aa10",
+      "size_bytes": 282,
+      "git_mode": "100755"
+    },
+    {
+      "path": "src/core_v2/CMakeLists.txt",
+      "source_path": "src/core_v2/CMakeLists.txt",
+      "git_blob_sha1": "aeaeb6bd003e68b1659c6fafef9f0b02074a8b66",
+      "sha256": "7bec6b5b70855f32ee9dc09595db563e797a0e1d14c3019425e6824775dc92e0",
+      "size_bytes": 1354,
+      "git_mode": "100644"
+    },
+    {
+      "path": "src/core_v2/include/ecu/core_v2/actuation/cyclic_can_actuator_runtime.hpp",
+      "source_path": "src/core_v2/include/ecu/core_v2/actuation/cyclic_can_actuator_runtime.hpp",
+      "git_blob_sha1": "c2fa89617c39795cf8b881a60e1c43d1abbb6e3e",
+      "sha256": "5a659097af204713dc786fdfed582af90b91000f7a37f5310d821c81261c1904",
+      "size_bytes": 8989,
+      "git_mode": "100644"
+    },
+    {
+      "path": "src/core_v2/include/ecu/core_v2/domain/device_under_test.hpp",
+      "source_path": "src/core_v2/include/ecu/core_v2/domain/device_under_test.hpp",
+      "git_blob_sha1": "b6e73fa8b669275202acffb646b460a0a8430c03",
+      "sha256": "b7df359dac8c3ea1ab456f9d01b4c15c4515effcd297a739941b6aa25f733b9b",
+      "size_bytes": 2332,
+      "git_mode": "100644"
+    },
+    {
+      "path": "src/core_v2/include/ecu/core_v2/domain/product_scope.hpp",
+      "source_path": "src/core_v2/include/ecu/core_v2/domain/product_scope.hpp",
+      "git_blob_sha1": "70369845237d10810f3ed630df1084a3be77181c",
+      "sha256": "5c8c7e86d409109adb8baaace14a1058f033ac86fb26c8e218583e879851aa40",
+      "size_bytes": 1094,
+      "git_mode": "100644"
+    },
+    {
+      "path": "src/core_v2/include/ecu/core_v2/protocol/isobus/extended_transport.hpp",
+      "source_path": "src/core_v2/include/ecu/core_v2/protocol/isobus/extended_transport.hpp",
+      "git_blob_sha1": "ba22b65680c7b47fdf632488acfb50fd1d0e6ac9",
+      "sha256": "85fe675deab44e2037ea0769fb53616101e927da22fb6f9a784e9b66100ae80e",
+      "size_bytes": 12589,
+      "git_mode": "100644"
+    },
+    {
+      "path": "src/core_v2/include/ecu/core_v2/protocol/isobus/network_management.hpp",
+      "source_path": "src/core_v2/include/ecu/core_v2/protocol/isobus/network_management.hpp",
+      "git_blob_sha1": "f5c03049d241a86c789065d51413aed475328070",
+      "sha256": "61cc509739b470cd73f345a38c5ee0f222fb01a88d86c962fa2360ab73137c16",
+      "size_bytes": 4209,
+      "git_mode": "100644"
+    },
+    {
+      "path": "src/core_v2/include/ecu/core_v2/protocol/isobus/working_set.hpp",
+      "source_path": "src/core_v2/include/ecu/core_v2/protocol/isobus/working_set.hpp",
+      "git_blob_sha1": "3c9c8e437cadf1af4aa186aa554c1fd8f5d09ea5",
+      "sha256": "f0fe151f0b5c15e24e0a9b39d4b529f720cd04da16d19eb28ddc066298086947",
+      "size_bytes": 1355,
+      "git_mode": "100644"
+    },
+    {
+      "path": "src/core_v2/include/ecu/core_v2/protocol/isobus/working_set_lifecycle.hpp",
+      "source_path": "src/core_v2/include/ecu/core_v2/protocol/isobus/working_set_lifecycle.hpp",
+      "git_blob_sha1": "a2bc19dd11e29cace2e765b6aa4271d7ef987c2b",
+      "sha256": "52a48e4490c8015b82fead4025e2eddd53c1153b90427ba77a3f682e47ffec82",
+      "size_bytes": 4070,
+      "git_mode": "100644"
+    },
+    {
+      "path": "src/core_v2/include/ecu/core_v2/protocol/isotp/isotp_diagnostic_transport.hpp",
+      "source_path": "src/core_v2/include/ecu/core_v2/protocol/isotp/isotp_diagnostic_transport.hpp",
+      "git_blob_sha1": "a4c3574ad10c114d99a98e3710c07c48735d347b",
+      "sha256": "9c30a2806be2b123ef5ac1a32c297870d5e3e6c764119f199c75970979cda83e",
+      "size_bytes": 4277,
+      "git_mode": "100644"
+    },
+    {
+      "path": "src/core_v2/include/ecu/core_v2/protocol/isotp/isotp_endpoint.hpp",
+      "source_path": "src/core_v2/include/ecu/core_v2/protocol/isotp/isotp_endpoint.hpp",
+      "git_blob_sha1": "489608730e91299a8db51b17bbc5aca349d1d96e",
+      "sha256": "6526b880aa944bfcee867bc71d279c7396add45760c68474be559f88487cd700",
+      "size_bytes": 7332,
+      "git_mode": "100644"
+    },
+    {
+      "path": "src/core_v2/include/ecu/core_v2/protocol/j1939/acknowledgment.hpp",
+      "source_path": "src/core_v2/include/ecu/core_v2/protocol/j1939/acknowledgment.hpp",
+      "git_blob_sha1": "435d9c668c05f38c85bcb73ea5f18afac9182650",
+      "sha256": "0c0a6ff2cd8ce3fb48e9e698c2607861f684e5dff1d8c4945d3670cf13c5b6aa",
+      "size_bytes": 805,
+      "git_mode": "100644"
+    },
+    {
+      "path": "src/core_v2/include/ecu/core_v2/protocol/j1939/address_claim.hpp",
+      "source_path": "src/core_v2/include/ecu/core_v2/protocol/j1939/address_claim.hpp",
+      "git_blob_sha1": "b7a9d0029bcb5881189d52eb238c154fea43ab88",
+      "sha256": "2b800a72e577c1ea00491a397911afd83ec5141050f2f3c5d34030bcd82bc7e7",
+      "size_bytes": 4601,
+      "git_mode": "100644"
+    },
+    {
+      "path": "src/core_v2/include/ecu/core_v2/protocol/j1939/diagnostics.hpp",
+      "source_path": "src/core_v2/include/ecu/core_v2/protocol/j1939/diagnostics.hpp",
+      "git_blob_sha1": "49cd92917ea90bfaa8cba56c03e73f24d8d0c4d6",
+      "sha256": "1207cb5e723aab8442eb58e971d2e8bcbb00838de8e95ed3c106947a0b55a356",
+      "size_bytes": 5248,
+      "git_mode": "100644"
+    },
+    {
+      "path": "src/core_v2/include/ecu/core_v2/protocol/j1939/fd_contained_pg.hpp",
+      "source_path": "src/core_v2/include/ecu/core_v2/protocol/j1939/fd_contained_pg.hpp",
+      "git_blob_sha1": "4526aab89bb3772753c100bd2bc9d59c4e26b463",
+      "sha256": "35cacedadf6d17a85111717f6ac15f3ea2f9ddb50344efc2ae93adfe6c161c21",
+      "size_bytes": 3505,
+      "git_mode": "100644"
+    },
+    {
+      "path": "src/core_v2/include/ecu/core_v2/protocol/j1939/fd_transport_protocol.hpp",
+      "source_path": "src/core_v2/include/ecu/core_v2/protocol/j1939/fd_transport_protocol.hpp",
+      "git_blob_sha1": "08188b0e21dfb1fdfd72ca72b3beec772dfab592",
+      "sha256": "60019e9f49ba11021de12a35a8653754987c8fb415313a8013eb09673dc2784d",
+      "size_bytes": 15676,
+      "git_mode": "100644"
+    },
+    {
+      "path": "src/core_v2/include/ecu/core_v2/protocol/j1939/j1939_identifier.hpp",
+      "source_path": "src/core_v2/include/ecu/core_v2/protocol/j1939/j1939_identifier.hpp",
+      "git_blob_sha1": "9f9e208d731a64087412aa523c29bb56a612ea3b",
+      "sha256": "dcbcf3bc730cddf8fa8e034162f6d7687ec1b47f2016ed63bf481918d29efe9d",
+      "size_bytes": 2161,
+      "git_mode": "100644"
+    },
+    {
+      "path": "src/core_v2/include/ecu/core_v2/protocol/j1939/j1939_name.hpp",
+      "source_path": "src/core_v2/include/ecu/core_v2/protocol/j1939/j1939_name.hpp",
+      "git_blob_sha1": "3cbaee8d8b9178b014abd7d577f4896c6c418b53",
+      "sha256": "49dae9731399fcba6b94b20ad9cf1cb76ef889222ee3a57b478c0b2d2ca105dc",
+      "size_bytes": 1168,
+      "git_mode": "100644"
+    },
+    {
+      "path": "src/core_v2/include/ecu/core_v2/protocol/j1939/network_manager.hpp",
+      "source_path": "src/core_v2/include/ecu/core_v2/protocol/j1939/network_manager.hpp",
+      "git_blob_sha1": "a15053e788aeaffc635063255f824a7fc727a7b3",
+      "sha256": "c509a8f3238883707942adc1f6f8aefd1aadff39b099169c44b355c76846d2b5",
+      "size_bytes": 2757,
+      "git_mode": "100644"
+    },
+    {
+      "path": "src/core_v2/include/ecu/core_v2/protocol/j1939/request.hpp",
+      "source_path": "src/core_v2/include/ecu/core_v2/protocol/j1939/request.hpp",
+      "git_blob_sha1": "ff69f559c1b6375aca0cff4b8a706792c27b471d",
+      "sha256": "65cf51de0f5d8563ac0a64ce90f590dbbf5d012a88f9684b6430d22fce30f45a",
+      "size_bytes": 710,
+      "git_mode": "100644"
+    },
+    {
+      "path": "src/core_v2/include/ecu/core_v2/protocol/j1939/transport_protocol.hpp",
+      "source_path": "src/core_v2/include/ecu/core_v2/protocol/j1939/transport_protocol.hpp",
+      "git_blob_sha1": "9e8190379ac118b3deb899bf39095b0f93cb0fc2",
+      "sha256": "82df71ea725dda11ca26b8ef9d634595acdbbbac113597a6ee0ae81fa8ffa836",
+      "size_bytes": 12969,
+      "git_mode": "100644"
+    },
+    {
+      "path": "src/core_v2/include/ecu/core_v2/protocol/uds/uds_client.hpp",
+      "source_path": "src/core_v2/include/ecu/core_v2/protocol/uds/uds_client.hpp",
+      "git_blob_sha1": "b0f2d36b88460f1566b5ac48734033ed31ee9084",
+      "sha256": "38af8e431b2050f5ba13d314206e71f35d8c4384b4176d7922937ffe95925566",
+      "size_bytes": 3122,
+      "git_mode": "100644"
+    },
+    {
+      "path": "src/core_v2/include/ecu/core_v2/protocol/uds/uds_services.hpp",
+      "source_path": "src/core_v2/include/ecu/core_v2/protocol/uds/uds_services.hpp",
+      "git_blob_sha1": "81daef563c6e9286d259e1b90f222a4423f2f98a",
+      "sha256": "2767f8dbb061c32b7c64e3ebf6cda0c8473289d4d1df9577f984d85add65eab2",
+      "size_bytes": 907,
+      "git_mode": "100644"
+    },
+    {
+      "path": "src/core_v2/include/ecu/core_v2/protocol/uds/uds_types.hpp",
+      "source_path": "src/core_v2/include/ecu/core_v2/protocol/uds/uds_types.hpp",
+      "git_blob_sha1": "5f1eecb639fc6c88c8723ffe69cf2fee63308903",
+      "sha256": "137077506d4e2d37b1adcf42ef66704c5da8f48d1754d7bc5acce8aa859937e9",
+      "size_bytes": 4227,
+      "git_mode": "100644"
+    },
+    {
+      "path": "src/core_v2/include/ecu/core_v2/runtime/cancellation.hpp",
+      "source_path": "src/core_v2/include/ecu/core_v2/runtime/cancellation.hpp",
+      "git_blob_sha1": "17290a21d1de8008a75823dd676d11f2150a6051",
+      "sha256": "c7a839d98610c57953739832760a05395688bf42d2430af07a0a19d214d07a3c",
+      "size_bytes": 3051,
+      "git_mode": "100644"
+    },
+    {
+      "path": "src/core_v2/include/ecu/core_v2/runtime/command.hpp",
+      "source_path": "src/core_v2/include/ecu/core_v2/runtime/command.hpp",
+      "git_blob_sha1": "b714c7af3c942dc8f4260339547ed29e1c3fa44b",
+      "sha256": "50288772a21b79b2944474dcbffb57cbbc39c251b27509fd265e647c1482c257",
+      "size_bytes": 1345,
+      "git_mode": "100644"
+    },
+    {
+      "path": "src/core_v2/include/ecu/core_v2/runtime/command_dispatcher.hpp",
+      "source_path": "src/core_v2/include/ecu/core_v2/runtime/command_dispatcher.hpp",
+      "git_blob_sha1": "e270fef1e1a9991712d01ce0ab4a2c8ee2465ec5",
+      "sha256": "3540ab225e70fd11cc2fe8866347f985ca39856098d8c1f9a9fca3b22b947ad6",
+      "size_bytes": 2894,
+      "git_mode": "100644"
+    },
+    {
+      "path": "src/core_v2/include/ecu/core_v2/runtime/configuration_gate.hpp",
+      "source_path": "src/core_v2/include/ecu/core_v2/runtime/configuration_gate.hpp",
+      "git_blob_sha1": "351d50c316fcf1d2c041994fa684acc101c6ffe7",
+      "sha256": "6618d599b2fb42a54942551fd733fb30e0576856331fc650e1f13c8e3a997f78",
+      "size_bytes": 683,
+      "git_mode": "100644"
+    },
+    {
+      "path": "src/core_v2/include/ecu/core_v2/runtime/dut_registry.hpp",
+      "source_path": "src/core_v2/include/ecu/core_v2/runtime/dut_registry.hpp",
+      "git_blob_sha1": "75dcf5e081577b45e7900f05075b2aec62c5e5b4",
+      "sha256": "b686826ec73e2c29e921697be8e1fd8cfac99cfcf0a82e148c1856b962429c89",
+      "size_bytes": 1648,
+      "git_mode": "100644"
+    },
+    {
+      "path": "src/core_v2/include/ecu/core_v2/runtime/event.hpp",
+      "source_path": "src/core_v2/include/ecu/core_v2/runtime/event.hpp",
+      "git_blob_sha1": "8edeeb576aaddcfb2f2834fd947793ae086f89ee",
+      "sha256": "39d9a12d811b85def24f71ce9cdbaa2cb7dd733979ecf3e1afe1b63bbce75b71",
+      "size_bytes": 1316,
+      "git_mode": "100644"
+    },
+    {
+      "path": "src/core_v2/include/ecu/core_v2/runtime/event_bus.hpp",
+      "source_path": "src/core_v2/include/ecu/core_v2/runtime/event_bus.hpp",
+      "git_blob_sha1": "413855bbedb869f0378013fc89f07963555c1322",
+      "sha256": "2118f195a383ed8e34943825fcb4e77bb52f6a7bd3482edda26b22aebaf7d412",
+      "size_bytes": 2339,
+      "git_mode": "100644"
+    },
+    {
+      "path": "src/core_v2/include/ecu/core_v2/runtime/lifecycle.hpp",
+      "source_path": "src/core_v2/include/ecu/core_v2/runtime/lifecycle.hpp",
+      "git_blob_sha1": "3eefdb2ee82f524fcd4b2798e5b2ad5062fe9c2c",
+      "sha256": "8484b4ae3eb4f7f2402d3a887905274841f5b9061e555a8432deb80db377b7fe",
+      "size_bytes": 2587,
+      "git_mode": "100644"
+    },
+    {
+      "path": "src/core_v2/include/ecu/core_v2/runtime/module_registry.hpp",
+      "source_path": "src/core_v2/include/ecu/core_v2/runtime/module_registry.hpp",
+      "git_blob_sha1": "f24ef588d4d8cd45283b6f72ad5017c078f5e125",
+      "sha256": "c2428c02940fc9fe5ddad8c65250ac6b2e1e618651c48ca7001d7ada428e4238",
+      "size_bytes": 1689,
+      "git_mode": "100644"
+    },
+    {
+      "path": "src/core_v2/include/ecu/core_v2/runtime/resource_manager.hpp",
+      "source_path": "src/core_v2/include/ecu/core_v2/runtime/resource_manager.hpp",
+      "git_blob_sha1": "22af05b22e48db30518cc9c250e97a0d694577b1",
+      "sha256": "4527702fc03f44c7ddf4db88568ff7fe7654ee0d7c1e8842c5b924b75b4c2371",
+      "size_bytes": 2844,
+      "git_mode": "100644"
+    },
+    {
+      "path": "src/core_v2/include/ecu/core_v2/runtime/state.hpp",
+      "source_path": "src/core_v2/include/ecu/core_v2/runtime/state.hpp",
+      "git_blob_sha1": "94eaec93221b4f3def1a873fd14708065a73af91",
+      "sha256": "ac7a02215d26ba5b02460f5e730bd73a11c536c27be6f2956bf75e639cf4cfc0",
+      "size_bytes": 580,
+      "git_mode": "100644"
+    },
+    {
+      "path": "src/core_v2/include/ecu/core_v2/runtime/state_registry.hpp",
+      "source_path": "src/core_v2/include/ecu/core_v2/runtime/state_registry.hpp",
+      "git_blob_sha1": "5bb33aa52a21e6a07be7e2949f3769c383ca043f",
+      "sha256": "7bfefe6e5dfd30abae903b6c2f9e210c13f3a92300bcf802a98a204631c4cc3f",
+      "size_bytes": 2301,
+      "git_mode": "100644"
+    },
+    {
+      "path": "src/core_v2/include/ecu/core_v2/safety/deadline_watchdog.hpp",
+      "source_path": "src/core_v2/include/ecu/core_v2/safety/deadline_watchdog.hpp",
+      "git_blob_sha1": "57383cd3cd7ebb4ff128b2ee103a480855b31cec",
+      "sha256": "a7ec3537f4871dd646c828b5c7e821c9459a69d05aba7490b1a83d18f63eee8b",
+      "size_bytes": 2691,
+      "git_mode": "100644"
+    },
+    {
+      "path": "src/core_v2/include/ecu/core_v2/time/monotonic_clock.hpp",
+      "source_path": "src/core_v2/include/ecu/core_v2/time/monotonic_clock.hpp",
+      "git_blob_sha1": "f1ca610bc399278df96d79ed9ed82dcebcebe8bd",
+      "sha256": "e078977368ae277101146fa88ef95cc75152c7799abcf56cbcb1080055278ace",
+      "size_bytes": 2871,
+      "git_mode": "100644"
+    },
+    {
+      "path": "src/core_v2/include/ecu/core_v2/transport/can_bus_runtime.hpp",
+      "source_path": "src/core_v2/include/ecu/core_v2/transport/can_bus_runtime.hpp",
+      "git_blob_sha1": "18bdac889d3857f9bebc8ae2732b2538ff99d19c",
+      "sha256": "22d984e2eb5bf77bb1da4850c633ab723b6c416f07286ec48e4141cfbb0a858f",
+      "size_bytes": 5683,
+      "git_mode": "100644"
+    },
+    {
+      "path": "src/core_v2/include/ecu/core_v2/transport/can_types.hpp",
+      "source_path": "src/core_v2/include/ecu/core_v2/transport/can_types.hpp",
+      "git_blob_sha1": "dc7253bd9b490f0af97f5840f565553b425f7c6d",
+      "sha256": "ff11304889f8fe8b5f27388e9c81a637d4608dd6253bd6d0650b2dce7b7e074b",
+      "size_bytes": 3271,
+      "git_mode": "100644"
+    },
+    {
+      "path": "src/core_v2/include/ecu/core_v2/transport/i_can_driver.hpp",
+      "source_path": "src/core_v2/include/ecu/core_v2/transport/i_can_driver.hpp",
+      "git_blob_sha1": "2af2aa9e30399b5d6b31b2c152d8f8df91401aae",
+      "sha256": "e7e124cb710241a47c1e2df39722b633a4059f3c061c8ce398cbdafc87f7c21b",
+      "size_bytes": 4069,
+      "git_mode": "100644"
+    },
+    {
+      "path": "src/core_v2/include/ecu/core_v2/transport/i_diagnostic_transport.hpp",
+      "source_path": "src/core_v2/include/ecu/core_v2/transport/i_diagnostic_transport.hpp",
+      "git_blob_sha1": "4c1491ab0b88262f95d111b30e4d689b93fbd2ff",
+      "sha256": "549ce065b42793c4ff8c87f390797b50428f40969ef22edd98a8dbe920dac416",
+      "size_bytes": 1674,
+      "git_mode": "100644"
+    },
+    {
+      "path": "src/core_v2/src/acknowledgment.cpp",
+      "source_path": "src/core_v2/src/acknowledgment.cpp",
+      "git_blob_sha1": "b4d54cf21b9c16dd188058ccca738580dc58e5ff",
+      "sha256": "809fdebc95d320375a1283de3836414161c76af5ab608a12a62eb1137d922ea3",
+      "size_bytes": 1953,
+      "git_mode": "100644"
+    },
+    {
+      "path": "src/core_v2/src/address_claim.cpp",
+      "source_path": "src/core_v2/src/address_claim.cpp",
+      "git_blob_sha1": "99de15f1f9df989d8f6e59ec91de1f1405d21a0c",
+      "sha256": "759f700c3c8ee3d7d31d54b439ec419f8131b16c7fc5a5a29cabcdc1a1537f86",
+      "size_bytes": 15023,
+      "git_mode": "100644"
+    },
+    {
+      "path": "src/core_v2/src/can_bus_runtime.cpp",
+      "source_path": "src/core_v2/src/can_bus_runtime.cpp",
+      "git_blob_sha1": "35021dcb58c8996a6af447ef70f23e90c867664e",
+      "sha256": "d9512e3fcb48ccf726dc1cd5de190c10c67961cc6ba81bddddbe9b9d853d3817",
+      "size_bytes": 16971,
+      "git_mode": "100644"
+    },
+    {
+      "path": "src/core_v2/src/can_types.cpp",
+      "source_path": "src/core_v2/src/can_types.cpp",
+      "git_blob_sha1": "a807f76aac6e6187c896406e70e27492b8148239",
+      "sha256": "185683b5ecd6a684741ce64e5bdc6293e4f3afd7b9dd1416b0aab26a72bba675",
+      "size_bytes": 3942,
+      "git_mode": "100644"
+    },
+    {
+      "path": "src/core_v2/src/command_dispatcher.cpp",
+      "source_path": "src/core_v2/src/command_dispatcher.cpp",
+      "git_blob_sha1": "27c68132f0334487eb7ab53f8d39a2a171ac9a04",
+      "sha256": "91e83fe289a86b24c350e8c0f69de2ca0889c79dcf99e2a9016994f8aa7c76ab",
+      "size_bytes": 4691,
+      "git_mode": "100644"
+    },
+    {
+      "path": "src/core_v2/src/cyclic_can_actuator_runtime.cpp",
+      "source_path": "src/core_v2/src/cyclic_can_actuator_runtime.cpp",
+      "git_blob_sha1": "ad9aafc5d00ed8c300f3851077e8fe0e53a57c5f",
+      "sha256": "ae2a9fd5b96ca4d3cb0b359dafafd08341e2eca385e60f97072cd3b1a6c51a08",
+      "size_bytes": 24477,
+      "git_mode": "100644"
+    },
+    {
+      "path": "src/core_v2/src/deadline_watchdog.cpp",
+      "source_path": "src/core_v2/src/deadline_watchdog.cpp",
+      "git_blob_sha1": "6ea2e88e260d4e402151b097dfecc4cdb49bf5dd",
+      "sha256": "a5d928c54e64713dee1ddd0d7b40965446adac99c302cd889f3d3dca1cb59243",
+      "size_bytes": 5981,
+      "git_mode": "100644"
+    },
+    {
+      "path": "src/core_v2/src/diagnostics.cpp",
+      "source_path": "src/core_v2/src/diagnostics.cpp",
+      "git_blob_sha1": "e851f52304501bcbecb18cbfa416d34aa73c2dfc",
+      "sha256": "8c6e2d5b874f158ce056ab0bb4afc1cfe5279140d9e4b5a574ca0364b102f685",
+      "size_bytes": 13179,
+      "git_mode": "100644"
+    },
+    {
+      "path": "src/core_v2/src/dut_registry.cpp",
+      "source_path": "src/core_v2/src/dut_registry.cpp",
+      "git_blob_sha1": "79c34d834039e9ed659d2340375e117bff3c236d",
+      "sha256": "ba2e69e0b3951abd5d67fc8520a96cfa5ca175db330c1424096ce0e7cde2bcbc",
+      "size_bytes": 3443,
+      "git_mode": "100644"
+    },
+    {
+      "path": "src/core_v2/src/event_bus.cpp",
+      "source_path": "src/core_v2/src/event_bus.cpp",
+      "git_blob_sha1": "170aed81bdd0d50ff5437f0d0747aa7259d5fb31",
+      "sha256": "cf2e2c37ebb75c3cf886a7c36a8455f0eb6ac295eda800870d476004bb015c36",
+      "size_bytes": 4865,
+      "git_mode": "100644"
+    },
+    {
+      "path": "src/core_v2/src/extended_transport.cpp",
+      "source_path": "src/core_v2/src/extended_transport.cpp",
+      "git_blob_sha1": "ecb5605c1e3cc9625949c05b4155452e587de40c",
+      "sha256": "99fbb5c3bc241c17d70385727884737b5398d6e1c62c6e6aed50f0e577fd88ce",
+      "size_bytes": 35989,
+      "git_mode": "100644"
+    },
+    {
+      "path": "src/core_v2/src/fd_contained_pg.cpp",
+      "source_path": "src/core_v2/src/fd_contained_pg.cpp",
+      "git_blob_sha1": "5f30031d76b7935284d4d46a311195c88ecd9f1f",
+      "sha256": "1e1a308eb5a7bcf8d36487470b6007fb864f8e4e16bc057fd67a39681518bd44",
+      "size_bytes": 10787,
+      "git_mode": "100644"
+    },
+    {
+      "path": "src/core_v2/src/fd_transport_protocol.cpp",
+      "source_path": "src/core_v2/src/fd_transport_protocol.cpp",
+      "git_blob_sha1": "6e3fd663e0472de778febb81c4a89cf12cd8bf8f",
+      "sha256": "5a2ede2477ea27e0eaabaac0f31c5a1ff05e094d3e824e69ab7a5e082cf03964",
+      "size_bytes": 56658,
+      "git_mode": "100644"
+    },
+    {
+      "path": "src/core_v2/src/isobus_network_management.cpp",
+      "source_path": "src/core_v2/src/isobus_network_management.cpp",
+      "git_blob_sha1": "bb067ad1fd545ee360d40958c062c19bfb9c0421",
+      "sha256": "2efa0a1b7b48d41bbd16bbd6c6c36f3e96cd9ae8789a4a0dd8ba92c7053b1b4e",
+      "size_bytes": 9931,
+      "git_mode": "100644"
+    },
+    {
+      "path": "src/core_v2/src/isotp_endpoint.cpp",
+      "source_path": "src/core_v2/src/isotp_endpoint.cpp",
+      "git_blob_sha1": "b87c801e754354a572f5732130dc396e1e4f7b83",
+      "sha256": "8cd8b806e5640871273970385fe0a47cfbd00c22ab7b85bfa2ca7fd8726bcf8a",
+      "size_bytes": 29168,
+      "git_mode": "100644"
+    },
+    {
+      "path": "src/core_v2/src/j1939_identifier.cpp",
+      "source_path": "src/core_v2/src/j1939_identifier.cpp",
+      "git_blob_sha1": "a3026dbce60fa6bfb2d690ea05b92550b9e1f20c",
+      "sha256": "06a4baa283905215f9f7f379a5b5d91220cc283bda9eeedcdc479ba404536e33",
+      "size_bytes": 3459,
+      "git_mode": "100644"
+    },
+    {
+      "path": "src/core_v2/src/j1939_name.cpp",
+      "source_path": "src/core_v2/src/j1939_name.cpp",
+      "git_blob_sha1": "29346f5b708659361e468a66023a702459b48146",
+      "sha256": "d4f42cdee7fdce6a6e7980b31a06e53e1f15a6e916f5fd24d282e4fe5e4500c1",
+      "size_bytes": 2995,
+      "git_mode": "100644"
+    },
+    {
+      "path": "src/core_v2/src/module_registry.cpp",
+      "source_path": "src/core_v2/src/module_registry.cpp",
+      "git_blob_sha1": "6deb8cb13cac2e5faefc4ae9bf393a9c9e912217",
+      "sha256": "be13d53d7b745adc930058e1ffe86d0e74f2c94e86de49e2c7904b1e6a89b94c",
+      "size_bytes": 2105,
+      "git_mode": "100644"
+    },
+    {
+      "path": "src/core_v2/src/network_manager.cpp",
+      "source_path": "src/core_v2/src/network_manager.cpp",
+      "git_blob_sha1": "9ae9dd4943ddd596d229928e97bc5832d5935ba8",
+      "sha256": "3f1628c80ca8e0276d9fde9fff5a45cf70a3669feadcc537d2930d5fd026a209",
+      "size_bytes": 6683,
+      "git_mode": "100644"
+    },
+    {
+      "path": "src/core_v2/src/request.cpp",
+      "source_path": "src/core_v2/src/request.cpp",
+      "git_blob_sha1": "9f3384934153aac6b89eced2f0f1d0c6f9a69a0c",
+      "sha256": "7e60dfe256d9c4ed6b6ac2e1d2d6bace41701f4fc7a6cffe085eeb562bfd34d3",
+      "size_bytes": 2085,
+      "git_mode": "100644"
+    },
+    {
+      "path": "src/core_v2/src/resource_manager.cpp",
+      "source_path": "src/core_v2/src/resource_manager.cpp",
+      "git_blob_sha1": "89ed6cd14688e245b623d9a53458a6cb5125cd88",
+      "sha256": "9411d6bd316eff3420597a76ed5d84cbf41f50c5ed664b96eb6873e343dccfd4",
+      "size_bytes": 3643,
+      "git_mode": "100644"
+    },
+    {
+      "path": "src/core_v2/src/state_registry.cpp",
+      "source_path": "src/core_v2/src/state_registry.cpp",
+      "git_blob_sha1": "579e891e3c7db94b7cc5ba96748c04f21691fa9e",
+      "sha256": "f1aa751006e2ab8448c8b4fa72ae87c1caca7bf710c008b6cb85f06140b3e086",
+      "size_bytes": 3450,
+      "git_mode": "100644"
+    },
+    {
+      "path": "src/core_v2/src/transport_protocol.cpp",
+      "source_path": "src/core_v2/src/transport_protocol.cpp",
+      "git_blob_sha1": "952a3cb0d990a9a6d4449b234cf935ece9e548dc",
+      "sha256": "4d369ce9761b638c0f6eea42ef9815dc7f5fc5c6ac1d2665e893e86714d9ead0",
+      "size_bytes": 40304,
+      "git_mode": "100644"
+    },
+    {
+      "path": "src/core_v2/src/uds_client.cpp",
+      "source_path": "src/core_v2/src/uds_client.cpp",
+      "git_blob_sha1": "db7f14424228320903832619dcf13bb5d7cf2ee7",
+      "sha256": "9e5706684ed827664ef82b40a033305f8d39995d4c52cd7bd0bb1b438b286ca4",
+      "size_bytes": 15146,
+      "git_mode": "100644"
+    },
+    {
+      "path": "src/core_v2/src/uds_services.cpp",
+      "source_path": "src/core_v2/src/uds_services.cpp",
+      "git_blob_sha1": "edb68d301e0ddb6a348b90a5ee4e528e26833b36",
+      "sha256": "06cc821374ba64476db359e6eb19dcb76136921b3c98d55f22d6656ba9c34e35",
+      "size_bytes": 2930,
+      "git_mode": "100644"
+    },
+    {
+      "path": "src/core_v2/src/uds_types.cpp",
+      "source_path": "src/core_v2/src/uds_types.cpp",
+      "git_blob_sha1": "9e02a0cb32667b3aff4fde352c0c6b68344c71b7",
+      "sha256": "e959a3ccbc7d857e82f614feb1028413f65609d2b591f2162fbcc9f03f857bdf",
+      "size_bytes": 822,
+      "git_mode": "100644"
+    },
+    {
+      "path": "src/core_v2/src/working_set.cpp",
+      "source_path": "src/core_v2/src/working_set.cpp",
+      "git_blob_sha1": "33f3eac2f0e6940a86b3458b57a1bf528037a343",
+      "sha256": "f0a7a22cd262f7cb54a564e721ad502a9975f2f994dcad6750281f42bf250ed9",
+      "size_bytes": 3897,
+      "git_mode": "100644"
+    },
+    {
+      "path": "src/core_v2/src/working_set_lifecycle.cpp",
+      "source_path": "src/core_v2/src/working_set_lifecycle.cpp",
+      "git_blob_sha1": "8d7f74b8a4d95c01c6c6c162c08bf3f24b8d0dd9",
+      "sha256": "e1313d44b19ff91ffaf1c00444457de3ff1fc5d12840f85b3c11654128fb89ee",
+      "size_bytes": 14352,
+      "git_mode": "100644"
+    },
+    {
+      "path": "tests/core_v2_cyclic_can_actuator_runtime_tests.cpp",
+      "source_path": "tests/core_v2_cyclic_can_actuator_runtime_tests.cpp",
+      "git_blob_sha1": "c86b7cdc1a418bdd669c6a89f5155a1c6faf3a35",
+      "sha256": "d8d00d1420a184d932034d500d805477fe27f944995c4fc3a32bd407de63d045",
+      "size_bytes": 27766,
+      "git_mode": "100644"
+    },
+    {
+      "path": "tests/core_v2_dut_neutral_shared_bus_tests.cpp",
+      "source_path": "tests/core_v2_dut_neutral_shared_bus_tests.cpp",
+      "git_blob_sha1": "e369e51cf9913b5ec1de64292ffbd67054b406b9",
+      "sha256": "75c830e49b405b41cd6dca8f31c52a58a3f8a70cc18fa2551f5932b294e2f669",
+      "size_bytes": 12496,
+      "git_mode": "100644"
+    },
+    {
+      "path": "tests/core_v2_foundation_tests.cpp",
+      "source_path": "tests/core_v2_foundation_tests.cpp",
+      "git_blob_sha1": "20ee6672a2efffc90cb8cb308de7e9a24fc4ea63",
+      "sha256": "987214a66b465407f2401a1888799f9a1f1d652618a05c592b876c670d086f02",
+      "size_bytes": 59964,
+      "git_mode": "100644"
+    },
+    {
+      "path": "tests/core_v2_isobus_etp_tests.cpp",
+      "source_path": "tests/core_v2_isobus_etp_tests.cpp",
+      "git_blob_sha1": "c09c2d5038b051e29ffddee43c44049e951c5dd3",
+      "sha256": "738b8fcf50b45cd06f236cf1c7b3c2d5cd7c7f5cdbfeda0b9ff5a927330603b3",
+      "size_bytes": 29747,
+      "git_mode": "100644"
+    },
+    {
+      "path": "tests/core_v2_isobus_network_management_tests.cpp",
+      "source_path": "tests/core_v2_isobus_network_management_tests.cpp",
+      "git_blob_sha1": "8077ee8f3bdb4d558e6d82ce942157168666237c",
+      "sha256": "c11f6278a1f1c9eb10155358ca9343edb20f808c1dc6f9b2c63c859617b889fa",
+      "size_bytes": 13840,
+      "git_mode": "100644"
+    },
+    {
+      "path": "tests/core_v2_isobus_working_set_lifecycle_tests.cpp",
+      "source_path": "tests/core_v2_isobus_working_set_lifecycle_tests.cpp",
+      "git_blob_sha1": "2faa3f8eb0e0d1e312480b3511592d3d39971844",
+      "sha256": "b76383a930ad2132ff8bb59656c9dfd3b67a1066cc0824cc1e338a66f449a88b",
+      "size_bytes": 21861,
+      "git_mode": "100644"
+    },
+    {
+      "path": "tests/core_v2_isobus_working_set_tests.cpp",
+      "source_path": "tests/core_v2_isobus_working_set_tests.cpp",
+      "git_blob_sha1": "d6e68fbefa9bb1a5f1a347484a85b298e78a56eb",
+      "sha256": "9521de9fc5b1320b5f739ba87d3d0a1b994aa07e3f80738df0fed128e9c32fb5",
+      "size_bytes": 7207,
+      "git_mode": "100644"
+    },
+    {
+      "path": "tests/core_v2_isotp_tests.cpp",
+      "source_path": "tests/core_v2_isotp_tests.cpp",
+      "git_blob_sha1": "4813753145eda5dd5f681fbb3f2cc24ace93a021",
+      "sha256": "98db0afd085afc554388454338abd535cc9058a366cf73668433d9623daf7930",
+      "size_bytes": 35197,
+      "git_mode": "100644"
+    },
+    {
+      "path": "tests/core_v2_j1939_acknowledgment_tests.cpp",
+      "source_path": "tests/core_v2_j1939_acknowledgment_tests.cpp",
+      "git_blob_sha1": "715003a0566450feb15c25b65e1e97d53e92094d",
+      "sha256": "1456543ce24bf754bbc700f262eecf931f65658ba0029f6ee755cfe3d021ea74",
+      "size_bytes": 3642,
+      "git_mode": "100644"
+    },
+    {
+      "path": "tests/core_v2_j1939_diagnostics_tests.cpp",
+      "source_path": "tests/core_v2_j1939_diagnostics_tests.cpp",
+      "git_blob_sha1": "03e4df91dd5d3fd27c683b90a86458fc652b982e",
+      "sha256": "3caa2ac68cbf8c034ed6682c95a6d3fdf61b13ebb03842f556279b0a838fd9ee",
+      "size_bytes": 19211,
+      "git_mode": "100644"
+    },
+    {
+      "path": "tests/core_v2_j1939_fd_cpg_tests.cpp",
+      "source_path": "tests/core_v2_j1939_fd_cpg_tests.cpp",
+      "git_blob_sha1": "f21122d49f394b0fdbe1faad1081097d08585451",
+      "sha256": "8e121e0fc6942efa435b7d552857addbffac07e7a0d74963fe9645fc07798f45",
+      "size_bytes": 16471,
+      "git_mode": "100644"
+    },
+    {
+      "path": "tests/core_v2_j1939_fd_tp_tests.cpp",
+      "source_path": "tests/core_v2_j1939_fd_tp_tests.cpp",
+      "git_blob_sha1": "66404e45157ae6e7b8b76bab251078657515bbd5",
+      "sha256": "6a16b8edc71ab62f48792e329ccdfd1cda432a88e9f3e7f0dbd9ee831108d293",
+      "size_bytes": 38067,
+      "git_mode": "100644"
+    },
+    {
+      "path": "tests/core_v2_j1939_network_tests.cpp",
+      "source_path": "tests/core_v2_j1939_network_tests.cpp",
+      "git_blob_sha1": "93ba77cbb6bf22b064aa2a32a5f681df26732892",
+      "sha256": "e28176d49f6e6037fad6b83d7404a3d382173fc4186d663412ae28e0990211a3",
+      "size_bytes": 23509,
+      "git_mode": "100644"
+    },
+    {
+      "path": "tests/core_v2_j1939_request_tests.cpp",
+      "source_path": "tests/core_v2_j1939_request_tests.cpp",
+      "git_blob_sha1": "aa0f8f56ef37b335017b0fc7dc393730e185fb14",
+      "sha256": "a5dad19700640d86d5a597f76ddfe47e2b8b970c54ccd1557b89bd8a14118235",
+      "size_bytes": 3751,
+      "git_mode": "100644"
+    },
+    {
+      "path": "tests/core_v2_j1939_tp_e2e_tests.cpp",
+      "source_path": "tests/core_v2_j1939_tp_e2e_tests.cpp",
+      "git_blob_sha1": "aa86e29f2856648218828735fb3dbdb664fbd754",
+      "sha256": "112d782057d97407ab5595905e2abda6e62a38abf362a154a8fd12ed6f579c95",
+      "size_bytes": 6062,
+      "git_mode": "100644"
+    },
+    {
+      "path": "tests/core_v2_j1939_tp_tests.cpp",
+      "source_path": "tests/core_v2_j1939_tp_tests.cpp",
+      "git_blob_sha1": "01f56e6092911319e6e780bc5dae9a2fbb80601c",
+      "sha256": "7c10f5929f7d139888747e5a1dedfc393365f2d69a0083977904599b87d4b8e8",
+      "size_bytes": 16523,
+      "git_mode": "100644"
+    },
+    {
+      "path": "tests/core_v2_j1939_tp_tx_tests.cpp",
+      "source_path": "tests/core_v2_j1939_tp_tx_tests.cpp",
+      "git_blob_sha1": "f12ac6cd4ae8bb5896fe155b19ec3b0bff269542",
+      "sha256": "d23a1d312db52046e9e4c02911d2671211f2287ae3e95d420ada7e72cf2c9021",
+      "size_bytes": 15251,
+      "git_mode": "100644"
+    },
+    {
+      "path": "tests/core_v2_runtime_foundation_tests.cpp",
+      "source_path": "tests/core_v2_runtime_foundation_tests.cpp",
+      "git_blob_sha1": "5c7ad247328830019697d1ac202ad6b4ef6db933",
+      "sha256": "10d865f31d7fe319e325536037469c5f41cdff16671738a1230e78226c63b850",
+      "size_bytes": 21161,
+      "git_mode": "100644"
+    },
+    {
+      "path": "tests/core_v2_uds_isotp_e2e_tests.cpp",
+      "source_path": "tests/core_v2_uds_isotp_e2e_tests.cpp",
+      "git_blob_sha1": "17ab7f6d9b078c8e8885fa2bf81688da9d1d3f2c",
+      "sha256": "d15f2d229dcee3c6b73f618137dcf1e96eaed2c27d75d6643d3602e80058c96d",
+      "size_bytes": 11153,
+      "git_mode": "100644"
+    },
+    {
+      "path": "tests/core_v2_uds_tests.cpp",
+      "source_path": "tests/core_v2_uds_tests.cpp",
+      "git_blob_sha1": "1f0893b6f2eddadcb376e944dba9663e852837a7",
+      "sha256": "53d9fd0116b42cb4a9e391dffb4e1c5399fd4e3cc76ba8c3df296d1c6a1c66fe",
+      "size_bytes": 17429,
+      "git_mode": "100644"
+    }
+  ]
+}

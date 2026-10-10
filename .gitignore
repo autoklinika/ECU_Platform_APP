@@ -1,0 +1,12 @@
+/build/
+/out/
+/.venv/
+__pycache__/
+*.pyc
+/CMakeUserPresets.json
+/.cache/
+# No hardware traces, credentials or DUT identities in source control.
+/.env
+/.env.*
+/artifacts/
+/private/

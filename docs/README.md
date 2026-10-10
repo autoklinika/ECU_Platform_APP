@@ -29,3 +29,8 @@ komponenty opisane w dokumentacji są kierunkiem dalszej implementacji.
 
 - [Działający host i pakiety bez sprzętu](HOST_PROOF.md).
 - [Walidacja kroku 1](validation/host-proof-2026-10-10.md).
+
+## Integracja hosta z CORE na atrapie
+
+- [Runtime i sposób uruchomienia](RUNTIME_MOCK.md).
+- [Wyniki weryfikacji runtime](validation/runtime-mock-2026-10-10.md).

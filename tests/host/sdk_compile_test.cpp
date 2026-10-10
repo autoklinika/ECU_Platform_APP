@@ -1,4 +1,4 @@
-#include "ecu/app/sdk/contracts.hpp"
+#include "ecu/app/sdk/runtime.hpp"
 #include <type_traits>
 // This target links ONLY ECU::app_sdk: no host, Core, OS or GUI libraries.
 static_assert(std::is_copy_constructible_v<ecu::app::sdk::Manifest>);

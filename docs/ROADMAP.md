@@ -26,7 +26,13 @@ własnego uniwersalnego silnika skryptowego.
 capability, duplikat ID i nieuprawniona operacja odrzucone. Host pracuje bez GUI.
 Błąd aplikacji testowej ma kontrolowany wynik. Linux i Windows w CI.
 
-## 2. Zaufany runtime i granica sprzętu
+## 2. Zaufany runtime i granica sprzętu — integracja na atrapie
+
+Wykonano integrację hosta przez port SDK z mechanizmami CORE oraz dowód
+na atrapie CAN: [opis](RUNTIME_MOCK.md), [walidacja](validation/runtime-mock-2026-10-10.md).
+**Nie zamykamy całego kroku 2:** realny executor/clock i nowy adapter systemowy
+pozostają do implementacji i odrębnej weryfikacji. Nie podłączamy syntetycznej
+usługi dowodu do rzeczywistego DUT.
 
 Połączenie hosta z kontraktami CORE: jeden executor aktywnych obiektów,
 kompozycja sesji, kontrolowane zakończenie, migawki i błędy. Atrapa CAN do testów

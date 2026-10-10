@@ -1,0 +1,5 @@
+add_library(ecu_app_runtime STATIC src/runtime.cpp)
+add_library(ECU::app_runtime ALIAS ecu_app_runtime)
+target_include_directories(ecu_app_runtime PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
+target_link_libraries(ecu_app_runtime PUBLIC ECU::app_sdk ECU::core_v2)
+ecu_app_strict(ecu_app_runtime)

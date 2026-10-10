@@ -149,6 +149,10 @@ const char* code_name(const Code code) noexcept {
     ECU_APP_CODE(unknown_operation); ECU_APP_CODE(permission_denied); ECU_APP_CODE(invalid_input);
     ECU_APP_CODE(operation_failed); ECU_APP_CODE(counter_exhausted); ECU_APP_CODE(io_error);
     ECU_APP_CODE(invalid_command);
+    ECU_APP_CODE(accepted); ECU_APP_CODE(stale_session); ECU_APP_CODE(resource_busy);
+    ECU_APP_CODE(timeout); ECU_APP_CODE(cancelled); ECU_APP_CODE(transport_error);
+    ECU_APP_CODE(clock_fault); ECU_APP_CODE(queue_overflow); ECU_APP_CODE(cleanup_failed);
+    ECU_APP_CODE(invalid_state);
 #undef ECU_APP_CODE
   }
   return "unknown_code";

@@ -139,3 +139,14 @@ Nie ładuje kodu z pakietu. Host nie zależy od CORE przed krokiem integracji
 runtime; nie dodajemy linkowania rdzenia bez użycia ani drugiego jego runtime.
 [Implementacja i ograniczenia](HOST_PROOF.md). To uszczegółowienie kroku 1,
 nie zmiana kierunku instalowalnych aplikacji.
+
+## D16 — Port runtime i jawny zakres dowodu na atrapie
+
+Host zna eksperymentalny port SDK 1.1, nie klasy CORE/sterownika. Adapter runtime
+składa istniejące mechanizmy zasobów, anulowania, watchdogów i CanBusRuntime.
+Przyjęcie operacji nie jest wynikiem; sesja trwa między odczytami, fault nie
+uruchamia auto-reconnect. Pakiet nie otrzymuje generycznego API ramek.
+
+Demo z czasem wirtualnym jest oddzielnym programem, nie serwisem stanowiska.
+Właściwy executor i adapter OS pozostają kolejną pracą. Brak fizycznego testu
+nie zostaje nazwany PASS. Szczegóły: [RUNTIME_MOCK.md](RUNTIME_MOCK.md).

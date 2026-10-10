@@ -141,7 +141,7 @@ int run_host() {
 
 int main(const int argc, char** argv) {
   if (argc == 2 && std::string{argv[1]} == "--help") {
-    std::cout << "ECU Platform APP - offline host proof, API 1.0\n"
+    std::cout << "ECU Platform APP - offline host proof, API 1.1\n"
                  "No GUI, network, native plugins, hardware or persistent installation.\n"
                  "Commands (stdin, one per line; result is one JSON object):\n"
                  "  install \"package-directory\"\n  list\n"

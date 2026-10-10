@@ -3,7 +3,7 @@
 Plan nie nadaje zgody na wdrożenie, nadawanie CAN ani scalenie `main`.
 Kolejne zadanie ma kończyć się sprawdzalnym działaniem, nie tylko nowymi katalogami.
 
-## 0. Samodzielny fundament — bieżący zakres
+## 0. Samodzielny fundament — wykonany
 
 Import byte-exact CORE V2 i wszystkich jego 20 zestawów testów, nowy minimalny
 build, kontrola pochodzenia, kontrola granic i nowa dokumentacja z rozmowy.
@@ -12,7 +12,10 @@ build, kontrola pochodzenia, kontrola granic i nowa dokumentacja z rozmowy.
 w zadeklarowanych środowiskach; bez dostępu do sprzętu. Szczegółowy wynik w
 [VALIDATION.md](VALIDATION.md). To nie jest jeszcze działający host aplikacji.
 
-## 1. Najmniejszy działający host i pakiet bez sprzętu
+## 1. Najmniejszy działający host i pakiet bez sprzętu — wykonany
+
+Implementacja i sposób uruchomienia: [HOST_PROOF.md](HOST_PROOF.md).
+Wyniki bieżącego kroku: [walidacja](validation/host-proof-2026-10-10.md).
 
 Niewielki, przenośny program C++; minimalny manifest i kontrakt modułu sprawdzane
 na neutralnej aplikacji testowej. Katalog, zgodność, aktywacja, operacja z wynikiem,

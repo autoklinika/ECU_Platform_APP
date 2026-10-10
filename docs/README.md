@@ -24,3 +24,8 @@ podanego środowiska i wyniku. Test symulowany nigdy nie oznacza fizycznego PASS
 
 Przy tej rewizji istnieją CORE, jego testy i narzędzia repozytorium. Pozostałe
 komponenty opisane w dokumentacji są kierunkiem dalszej implementacji.
+
+## Bieżąca implementacja
+
+- [Działający host i pakiety bez sprzętu](HOST_PROOF.md).
+- [Walidacja kroku 1](validation/host-proof-2026-10-10.md).

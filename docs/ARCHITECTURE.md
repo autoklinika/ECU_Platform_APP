@@ -1,6 +1,8 @@
 # Architektura ECU Platform APP
 
-Status: **ustalony kierunek; host i moduły jeszcze niezaimplementowane**.
+Status: **ustalony kierunek; krok 1 ma działający host bez sprzętu**.
+Zakres implementacji i ograniczenia: [HOST_PROOF.md](HOST_PROOF.md).
+Docelowy runtime, izolacja dodatków, API i WebGUI pozostają do implementacji.
 Źródło: ustalenia właściciela w rozmowie z 2026-10-10 oraz wnioski z V1/V2.
 
 ## 1. Co budujemy

@@ -48,3 +48,28 @@ add_test(NAME ecu.repo.guard_regression
   COMMAND "${Python3_EXECUTABLE}" "${PROJECT_SOURCE_DIR}/tests/repo/test_guards.py")
 set_tests_properties(ecu.repo.core_import ecu.repo.core_architecture ecu.repo.guard_regression
   PROPERTIES TIMEOUT 120 LABELS "repository;offline")
+
+# The host is independent of Core at this step. Each target has its own boundary.
+if(ECU_APP_BUILD_HOST)
+  add_executable(ecu_app_manifest_tests host/manifest_tests.cpp)
+  target_link_libraries(ecu_app_manifest_tests PRIVATE ECU::app_host)
+  ecu_app_strict(ecu_app_manifest_tests)
+  add_test(NAME ecu.app.manifest COMMAND ecu_app_manifest_tests)
+
+  add_executable(ecu_app_host_tests host/host_tests.cpp)
+  target_link_libraries(ecu_app_host_tests PRIVATE ECU::app_host)
+  ecu_app_strict(ecu_app_host_tests)
+  add_test(NAME ecu.app.host COMMAND ecu_app_host_tests)
+
+  add_executable(ecu_app_sdk_compile_test host/sdk_compile_test.cpp)
+  target_link_libraries(ecu_app_sdk_compile_test PRIVATE ECU::app_sdk)
+  ecu_app_strict(ecu_app_sdk_compile_test)
+  add_test(NAME ecu.app.sdk_standalone COMMAND ecu_app_sdk_compile_test)
+
+  add_test(NAME ecu.app.cli
+    COMMAND "${Python3_EXECUTABLE}" "${PROJECT_SOURCE_DIR}/tests/host/test_cli.py" "$<TARGET_FILE:ecu_app_host>")
+  add_test(NAME ecu.app.boundaries
+    COMMAND "${Python3_EXECUTABLE}" "${PROJECT_SOURCE_DIR}/tests/host/test_boundaries.py")
+  set_tests_properties(ecu.app.manifest ecu.app.host ecu.app.sdk_standalone ecu.app.cli ecu.app.boundaries
+    PROPERTIES TIMEOUT 120 LABELS "app;offline")
+endif()

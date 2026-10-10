@@ -1,0 +1,7 @@
+# Offline declarative example. No installation hooks or executable code.
+schema=1
+id=org.ecu.example.echo
+version=1.0.0
+api=1.0
+requires=demo.echo
+operation.ping=demo.echo

@@ -31,10 +31,18 @@ Kod i testy CORE nie zostały zmienione.
 
 ## CI
 
-Przy pierwszym zapisie tego dokumentu przygotowano workflow z 9 wariantami:
-5 Linux oraz 4 MSVC. Jego uruchomienie wymaga opublikowania pierwszej gałęzi.
-Wynik CI zostanie dopisany po rzeczywistym zakończeniu, z identyfikatorem runu
-i testowanym commitem. Samo istnienie YAML nie stanowi wyniku PASS.
+**CI zakończone: 9/9 wariantów PASS.**
+
+- Testowany commit APP: `5b8f4e77c640739dba96964729d3e4e04e635810`.
+- Run: [38037464682](https://github.com/autoklinika/ECU_Platform_APP/actions/runs/38037464682).
+- Linux: GCC Debug, GCC Release, Clang Debug, Clang ASan/UBSan i GCC Generic.
+- Windows: MSVC Win32 oraz x64, każdy w Debug i Release.
+- GitHub Actions potwierdza sukces wszystkich kroków `Build` i `Verify offline`.
+  Każdy wariant ma skonfigurowany ten sam zestaw 23 pozycji CTest z `--no-tests=error`.
+- Maszynowy zapis metadanych runu i kroków: [bootstrap-2026-10-10.json](validation/bootstrap-2026-10-10.json).
+
+Po tym runie dopisano wyłącznie dokumentację i zapis wyników. Źródła CORE,
+testy, CMake, narzędzia i workflow pozostają takie jak w testowanym commicie.
 
 Workflow pomija zmiany wyłącznie dokumentacyjne. Wyniki opisujące zakończony
 run mogą być dopisane bez ponownej kompilacji tych samych źródeł; zawsze podajemy

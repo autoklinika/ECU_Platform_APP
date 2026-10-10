@@ -5,6 +5,10 @@ Status: **ustalony kierunek; host i moduły jeszcze niezaimplementowane**.
 
 ## 1. Co budujemy
 
+Zakres produktu: wyłącznie TRUCK / AGRI / OHV, z jednym DUT jako domyślną
+topologią stanowiska. Multiplatformowość OS i wymienne peryferia są wymaganiami
+podstawowymi. Nie rozszerzamy zakresu o samochody osobowe ani inne projekty.
+
 Mały host platformy z instalowalnymi aplikacjami laboratoryjnymi. Wspólny zaufany
 runtime C++ korzysta z CORE V2. Niezależne WebGUI jest klientem. Osobne procesy
 pojawiają się wybiórczo, gdy wymagają tego granice awarii lub ciężka praca.
